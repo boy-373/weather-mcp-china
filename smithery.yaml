@@ -1,0 +1,21 @@
+# Smithery configuration (legacy repo-based format, still read by
+# directory crawlers). This server is primarily distributed as a
+# REMOTE / EXTERNAL MCP: point your client directly at the hosted URL
+# (see README.md). To publish the remote server on Smithery, see
+# https://smithery.ai/docs/build/external ("External MCP"):
+#   smithery mcp publish "<REMOTE_URL>" -n boy-373/weather-mcp-china
+# The block below also lets anyone run the server locally over stdio.
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+  commandFunction: |
+    (config) => ({
+      "command": "python",
+      "args": ["weather_mcp_server.py"],
+      "env": {
+        "MCP_HOST": "127.0.0.1",
+        "MCP_PORT": "8000"
+      }
+    })
