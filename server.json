@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.boy-373/weather-mcp-china",
   "title": "Weather Forecast MCP",
-  "description": "MCP server for current weather and multi-day forecasts for cities worldwide, with Chinese-friendly city resolution and dual data sources (Open-Meteo + wttr.in).",
+  "description": "MCP server for current weather and multi-day forecasts worldwide, Chinese city names and output.",
   "version": "1.0.0",
   "license": "MIT",
   "repository": {
