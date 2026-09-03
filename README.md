@@ -116,3 +116,15 @@ python weather_mcp_server.py
 ## 📄 License
 
 [MIT](LICENSE) © 2026 boy-373
+
+## Install via Smithery
+
+One-click install for [Smithery](https://smithery.ai)-supported clients (Claude Desktop, Cursor, etc.):
+
+[![Smithery](https://smithery.ai/badge/1561852680/weather-mcp-china)](https://smithery.ai/servers/1561852680/weather-mcp-china)
+
+Or run:
+
+```bash
+npx -y @smithery/cli install 1561852680/weather-mcp-china --client claude
+```
