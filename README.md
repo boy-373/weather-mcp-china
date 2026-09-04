@@ -128,3 +128,22 @@ Or run:
 ```bash
 npx -y @smithery/cli install 1561852680/weather-mcp-china --client claude
 ```
+
+---
+
+## 🔌 Use with Any AI Client — One-Click MCP Gateway
+
+Want to call this MCP (and **22,000+** others) directly from your AI assistant? We host a free **MCP aggregation gateway**. Add this single URL to Cherry Studio, Claude Desktop, Cursor, Cline, or any MCP-compatible client:
+
+```
+https://mcp.pianam.cn/ai/mcp
+```
+
+Then just tell your AI what you want in plain language (e.g. "weather in Qingdao" / "trending searches on Weibo") — it automatically **searches → inspects → calls** the right MCP for you. No per-server setup.
+
+**📖 3-step setup guide / 中文接入教程**: https://mcp.pianam.cn/ai-gateway
+
+- 🔍 AI auto-discovers tools across 22,000+ MCP servers
+- ✅ Servers health-checked weekly — alive ones ranked first
+- 🌏 Chinese-language search optimized
+- 🆓 Free, no API key required for the gateway
