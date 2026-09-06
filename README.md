@@ -46,7 +46,7 @@ Add this to your MCP client's `mcpServers` configuration (Claude Desktop `claude
 - Primary source: **[Open-Meteo](https://open-meteo.com/)** — free, **no API key, no registration**; geocoding + forecast, with Chinese-language city resolution (administrative-city ranking to avoid village name collisions).
 - Automatic fallback: **[wttr.in](https://wttr.in/)** if the primary source fails.
 - WMO weather codes and wind directions are translated to Chinese in the output.
-- Results cached for **600 seconds**; the hosted endpoint is rate-limited to **60 requests / minute / IP**.
+- Results cached for **600 seconds**; the hosted endpoint is rate-limited to **200 requests / minute / IP**.
 
 ## 🐢 Self-hosting
 
@@ -69,7 +69,7 @@ No API keys or accounts are ever required.
 ## 🗂️ Files
 
 - `weather_mcp_server.py` — the MCP server (FastMCP, Streamable HTTP transport).
-- `rate_limit.py` — lightweight per-IP sliding-window rate-limit middleware (60 req/min default).
+- `rate_limit.py` — lightweight per-IP sliding-window rate-limit middleware (200 req/min default).
 - `requirements.txt` — `mcp`, `uvicorn`, `starlette`.
 - `server.json` — official MCP Registry manifest (remote server entry, ready to publish with `mcp-publisher`).
 - `smithery.yaml` / `glama.json` — directory listing metadata.
@@ -101,7 +101,7 @@ No API keys or accounts are ever required.
 - 返回当前天气（天气状况/温度/体感温度/湿度/风向风速）+ 每日预报（日期/天气/最高最低温/降水概率）。
 - 主数据源 Open-Meteo（免费无需 Key），故障自动切换 wttr.in。
 
-**服务特性**：数据源全部为公开接口、无需注册/付费；服务端内存缓存、失败自动降级/切换备用通道；单 IP 限流 60 次/分钟。
+**服务特性**：数据源全部为公开接口、无需注册/付费；服务端内存缓存、失败自动降级/切换备用通道；单 IP 限流 200 次/分钟。
 
 **本地部署**：
 
