@@ -66,6 +66,14 @@ No API keys or accounts are ever required.
 
 ### 🐳 Self-host with Docker
 
+**Option A — pull the pre-built image (fastest, no build):**
+
+```bash
+docker run -d -p 8000:8000 --name weather-mcp-china ghcr.io/boy-373/weather-mcp-china:latest
+```
+
+**Option B — build from source:**
+
 ```bash
 git clone https://github.com/boy-373/weather-mcp-china.git
 cd weather-mcp-china
@@ -130,6 +138,10 @@ python weather_mcp_server.py
 **Docker 自托管**：
 
 ```bash
+# 方式一：直接拉预构建镜像（最快，无需构建）
+docker run -d -p 8000:8000 --name weather-mcp-china ghcr.io/boy-373/weather-mcp-china:latest
+
+# 方式二：从源码构建
 git clone https://github.com/boy-373/weather-mcp-china.git && cd weather-mcp-china
 docker build -t weather-mcp-china .
 docker run -d -p 8000:8000 --name weather-mcp-china weather-mcp-china
