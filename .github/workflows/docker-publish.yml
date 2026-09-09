@@ -48,3 +48,13 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Make image public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PKG_NAME: ${{ github.event.repository.name }}
+        run: |
+          echo "Setting package $PKG_NAME visibility to public..."
+          curl -sS -X PUT             -H "Authorization: token $GITHUB_TOKEN"             -H "Accept: application/vnd.github+json"             "https://api.github.com/user/packages/container/$PKG_NAME/visibility"             -d '{"visibility":"public"}'             -w "
+HTTP %{http_code}
+"
