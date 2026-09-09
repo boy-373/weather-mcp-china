@@ -50,6 +50,7 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Make image public
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PKG_NAME: ${{ github.event.repository.name }}
